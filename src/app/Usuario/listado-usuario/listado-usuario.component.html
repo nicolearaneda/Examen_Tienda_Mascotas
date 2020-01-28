@@ -1,0 +1,23 @@
+<p>listado works!</p>
+    <table>
+        <tr>
+            <th>ID Usuario</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Telefono</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Modificar</th>
+            <th>Eliminar</th>
+        </tr>
+        <tr *ngFor="let usuario of usuarios">
+            <td>{{usuario.id_u}}</td>
+            <td>{{usuario.nombre}}</td>
+            <td>{{usuario.apellidos}}</td>
+            <td>{{usuario.telefono}}</td>
+            <td>{{usuario.username}}</td>
+            <td>{{usuario.password}}</td>
+            <td><button (click)="Editar(usuario)">modificar</button></td>
+            <td><button (click)="Eliminar(usuario)">eliminar</button></td>
+        </tr>
+    </table>

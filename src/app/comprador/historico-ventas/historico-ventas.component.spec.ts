@@ -1,0 +1,25 @@
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { HistoricoVentasComponent } from './historico-ventas.component';
+
+describe('HistoricoVentasComponent', () => {
+  let component: HistoricoVentasComponent;
+  let fixture: ComponentFixture<HistoricoVentasComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ HistoricoVentasComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(HistoricoVentasComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
