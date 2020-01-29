@@ -28,7 +28,7 @@ export class AppComponent {
 
   listado_usuarios()
   {
-    this.router.navigate(['listado_ usuario']);
+    this.router.navigate(['listado_usuario']);
   }
 
   alta_usuarios()

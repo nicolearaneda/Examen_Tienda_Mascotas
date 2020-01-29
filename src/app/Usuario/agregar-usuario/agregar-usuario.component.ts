@@ -9,19 +9,46 @@ import { ServicioUsuariosService } from 'src/app/Servicios/servicio-usuarios.ser
   styleUrls: ['./agregar-usuario.component.css']
 })
 export class AgregarUsuarioComponent implements OnInit {
-  usuario:Usuario;
+  
+  usuario:Usuario = {nombre:'', apellidos:'', telefono:null, rol:null , username:'', password:''};
   constructor(private router:Router, private http:ServicioUsuariosService) { 
-  this.usuario;
   }
-
+  
   ngOnInit() {
     return this.agregarUsuario();
   }
 
   agregarUsuario()
   {
-    this.http.createUsuario(this.usuario).subscribe(usuario=>{this.usuario=usuario});
+//  this.http.createUsuario(this.usuario).subscribe(usuariito=>{this.usuario=usuariito});
+
+    /*console.log(this.usuario)  
+    this.http.createUsuario(this.usuario).subscribe(datos=>{this.usuario});
+    this.router.navigate(["listado_usuario"]);*/
+    console.log(this.usuario);
+    this.http.createUsuario(this.usuario)
+    .subscribe(datos=>{
+      this.router.navigate(["listado_usuario"]);
+    })
   }
+
+
+
+
+
+
+
+
+
+  /*  ngOnInit() {
+    return this.agregarUsuario();
+  }
+
+  agregarUsuario()
+  {
+    this.http.createUsuario(this.usuario).subscribe
+    (usuario=>{this.usuario=usuario});
+  }*/
 
 
 

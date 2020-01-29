@@ -11,7 +11,7 @@ import { ServicioMascotasService } from 'src/app/Servicios/servicio-mascotas.ser
 export class AgregarMascotaComponent implements OnInit {
   mascota:Mascota;
   constructor(private router:Router, private http:ServicioMascotasService) { 
-  this.mascota;
+  this.mascota=null;
   }
   
   ngOnInit() {
@@ -20,8 +20,13 @@ export class AgregarMascotaComponent implements OnInit {
 
   agregarMascota()
   {
-    this.http.createMascota(this.mascota).subscribe(mascotita=>{this.mascota=mascotita});
+    //this.http.createMascota(this.mascota).subscribe(mascotita=>{this.mascota=mascotita});
+    this.http.createMascota(this.mascota)
+    .subscribe(datos=>{
+      this.router.navigate(["listado_mascotas"]);
+    })
   }
+  
 
 }
 

@@ -2,70 +2,104 @@
 
 <form (submit)="agregarUsuario()" #formularioAlta="ngForm">
 
-  <label for="ID usuario" class="mr-sm-2">ID usuario</label>
-    <input type="text" id="id_u" name="id_u" placeholder="ID Usuario" autocomplete="off" [(ngModel)]="usuario.id_u"
-     #id_u="ngModel" required [ngModelOptions]="{updateOn:'blur'}">
-    <div *ngIf="id_u.invalid && (id_u.dirty || id_u.touched)">
+ <!-- <label for="id_u" class="mr-sm-2">ID usuario</label>
+    <input type="text" id="id_u" name="id_u"
+     placeholder="ID Usuario" autocomplete="off"
+      [(ngModel)]="usuario.id_u"
+     #id_u="ngModel" required
+      [ngModelOptions]="{updateOn:'blur'}">
+    <div *ngIf="id_u.invalid &&
+     (id_u.dirty || id_u.touched)">
       <div *ngIf="id_u.errors.required">
         El id es obligatorio
       </div>
-    </div>
+    </div>-->
 
-    <label for="Nombre" class="mr-sm-2">Nombre</label>
-      <input type="text" id="nombre" name="nombre" placeholder="Nombre" utocomplete="off" [(ngModel)]="usuario.nombre"
-       #nombre="ngModel" required [ngModelOptions]="{updateOn:'blur'}">
-      <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+  <!--  <label for="nombre" class="mr-sm-2">Nombre</label>
+      <input class="form-control" type="text" id="nombre" 
+      name="nombre"
+       placeholder="Nombre" utocomplete="off" ngModel
+        [(ngModel)]="usuario.nombre"
+       #nombre="ngModel" required
+        [ngModelOptions]="{updateOn:'blur'}"> -->
+
+        <label for="nombre"> Nombre </label>
+        <input class="form-control" type="text" autocomplete="off" name="nombre" id="nombre"
+         required [(ngModel)]= "usuario.nombre" #nombre="ngModel">
+        <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
         <div *ngIf="nombre.errors.required">
           El nombre es obligatorio
         </div>
-      </div>
+        </div>
   
-      <label for="Apellidos" class="mr-sm-2">Apellidos</label>
-      <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" autocomplete="off" [(ngModel)]="usuario.apellidos"
-         #apellidos="ngModel" required [ngModelOptions]="{updateOn:'blur'}">
-        <div *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched)">
+      <label for="apellidos" class="mr-sm-2">Apellidos</label>
+      <input class="form-control" type="text" id="apellidos" name="apellidos" 
+      placeholder="Apellidos" autocomplete="off" ngModel
+       [(ngModel)]= "usuario.apellidos"
+         #apellidos="ngModel" required
+          [ngModelOptions]="{updateOn:'blur'}">
+        <div *ngIf="apellidos.invalid 
+        && (apellidos.dirty || apellidos.touched)">
           <div *ngIf="apellidos.errors.required">
             Los apellidos son obligatorios
           </div>
         </div>
 
-        <label for="Telefono" class="mr-sm-2">Telefono</label>
-          <input type="text" id="telefono" name="telefono" placeholder="Telefono" autocomplete="off" [(ngModel)]="usuario.telefono"
-           #telefono="ngModel" required [ngModelOptions]="{updateOn:'blur'}">
-          <div *ngIf="telefono.invalid && (telefono.dirty || telefono.touched)">
+        <label for="telefono" class="mr-sm-2">Telefono</label>
+          <input class="form-control" type="text" id="telefono" name="telefono"
+           placeholder="Telefono" autocomplete="off" ngModel
+            [(ngModel)]="usuario.telefono"
+           #telefono="ngModel" required 
+           [ngModelOptions]="{updateOn:'blur'}">
+          <div *ngIf="telefono.invalid 
+          && (telefono.dirty || telefono.touched)">
             <div *ngIf="telefono.errors.required">
               El telefono es obligatorio
             </div>
           </div>
 
-          <label for="Rol" class="mr-sm-2">Rol</label>
-          <input type="text" id="rol" name="rol" placeholder="Rol" autocomplete="off" [(ngModel)]="usuario.rol"
-             #rol="ngModel" required [ngModelOptions]="{updateOn:'blur'}">
-            <div *ngIf="rol.invalid && (rol.dirty || rol.touched)">
+          <label for="rol" class="mr-sm-2">Rol</label>
+          <input class="form-control" type="text" id="rol" name="rol"
+           placeholder="Rol" autocomplete="off" ngModel 
+           [(ngModel)]="usuario.rol"
+             #rol="ngModel" required 
+             [ngModelOptions]="{updateOn:'blur'}">
+            <div *ngIf="rol.invalid &&
+             (rol.dirty || rol.touched)">
               <div *ngIf="rol.errors.required">
                 El rol es obligatorio
               </div>
             </div>      
 
-            <label for="Username" class="mr-sm-2">Username</label>
-            <input type="text" id="username" name="username" placeholder="Username" autocomplete="off" [(ngModel)]="usuario.username"
-               #username="ngModel" required [ngModelOptions]="{updateOn:'blur'}">
-              <div *ngIf="username.invalid && (username.dirty || username.touched)">
+            <label for="username" class="mr-sm-2">Username</label>
+            <input class="form-control"type="text" id="username" name="username"
+             placeholder="Username" autocomplete="off" ngModel
+              [(ngModel)]="usuario.username"
+               #username="ngModel" required
+                [ngModelOptions]="{updateOn:'blur'}">
+              <div *ngIf="username.invalid && 
+              (username.dirty || username.touched)">
                 <div *ngIf="username.errors.required">
                   El username es obligatorio
                 </div>
               </div>      
               
-              <label for="Password" class="mr-sm-2">Password</label>
-              <input type="password" id="password" name="password" placeholder="Password" autocomplete="off" [(ngModel)]="usuario.password"
-                 #password="ngModel" required maxlength [ngModelOptions]="{updateOn:'blur'}">
-                <div *ngIf="password.invalid && (password.dirty || password.touched)">
+              <label for="password" class="mr-sm-2">Password</label>
+              <input class="form-control" type="password" id="password" name="password"
+               placeholder="Password" autocomplete="off" ngModel
+               [(ngModel)]="usuario.password"
+                 #password="ngModel" required maxlength
+                  [ngModelOptions]="{updateOn:'blur'}">
+                <div *ngIf="password.invalid &&
+                 (password.dirty || password.touched)">
                   <div *ngIf="password.errors.required">
                     El password es obligatorio
                   </div>
                 </div>      
 
-    <button type="submit" [disabled] = "!formularioAlta.form.valid">Guardar</button>
+    <button type="submit"
+     [disabled] = "!formularioAlta.form.valid">
+     Guardar</button>
 </form>
 <router-outlet></router-outlet> 
 

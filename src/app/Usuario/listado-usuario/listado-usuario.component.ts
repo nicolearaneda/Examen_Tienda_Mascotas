@@ -21,17 +21,28 @@ export class ListadoUsuarioComponent implements OnInit {
 
     Editar(usuario:Usuario):void
   {
+  if(usuario.rol==1)
+  {
+    alert("No se puede modificar")
+  }else
+  {  
   localStorage.setItem("id_u",usuario.id_u.toString());
   this.router.navigate(["modificar_usuario"]);
+  }
   }
 
     Eliminar(usuario:Usuario)
     {
-    this.http.deleteUsuario(usuario)
+    if(usuario.rol==1)
+    {
+      alert("No se puede eliminar")
+    }else  
+    {this.http.deleteUsuario(usuario)
     .subscribe(datos=>{
     this.usuarios=this.usuarios.filter(p=>p!=usuario);
-    alert("eliminado");
+    alert("Eliminado");
     this.router.navigate(["listado_usuario"]); })
+    }
     }
 
 }
