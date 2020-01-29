@@ -18,18 +18,20 @@ export class ListadoUsuarioComponent implements OnInit {
     .subscribe(datos=>{this.usuarios=datos;
     })
   }
-Editar(usuario:Usuario):void{
-  localStorage.setItem("id",usuario.id.toString());
-  this.router.navigate(["modificarusuario"]);
-}
-Eliminar(usuario:Usuario)
-{
-  this.http.deleteUsuario(usuario)
-  .subscribe(datos=>{
-   this.usuarios=this.usuarios.filter(p=>p!=usuario);
+
+    Editar(usuario:Usuario):void
+  {
+  localStorage.setItem("id_u",usuario.id_u.toString());
+  this.router.navigate(["modificar_usuario"]);
+  }
+
+    Eliminar(usuario:Usuario)
+    {
+    this.http.deleteUsuario(usuario)
+    .subscribe(datos=>{
+    this.usuarios=this.usuarios.filter(p=>p!=usuario);
     alert("eliminado");
-    this.router.navigate(["listadousuarios"]);
-    })
-}
+    this.router.navigate(["listado_usuario"]); })
+    }
 
 }

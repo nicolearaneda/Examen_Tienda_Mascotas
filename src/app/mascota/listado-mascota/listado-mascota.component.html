@@ -1,15 +1,19 @@
-<p>listado works!</p>
+<p>Listado de mascotas</p>
     <table>
         <tr>
-            <th>id</th>
+            <th>ID Mascota</th>
             <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Precio</th>
             <th>Modificar</th>
             <th>Eliminar</th>
         </tr>
-        <tr *ngFor="let persona of personas">
-            <td>{{persona.id}}</td>
-            <td>{{persona.nombre}}</td>
-            <td><button (click)="Editar(persona)">modificar</button></td>
-            <td><button (click)="Eliminar(persona)">eliminar</button></td>
+        <tr *ngFor="let mascota of mascotas">
+            <td>{{mascota.id_m}}</td>
+            <td>{{mascota.nombre}}</td>
+            <td>{{mascota.tipo}}</td>
+            <td>{{mascota.precio}}</td>
+            <td><button (click)="Editar(mascota)">modificar</button></td>
+            <td><button (click)="Eliminar(mascota)">eliminar</button></td>
         </tr>
     </table>

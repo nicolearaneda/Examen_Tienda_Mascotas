@@ -16,6 +16,7 @@ export class ServicioMascotasService {
 
   getMascotas()
   {
+    
     return this.http.get<Mascota[]>(this.path_mascota);
   }
   
@@ -38,9 +39,6 @@ export class ServicioMascotasService {
   {
     return this.http.get<Mascota>(this.path_mascota+"/"+id_m);
   }
-
-
-
 
 
 }

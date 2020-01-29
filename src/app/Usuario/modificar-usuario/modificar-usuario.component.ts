@@ -26,7 +26,7 @@ export class ModificarUsuarioComponent implements OnInit {
       this.http.updateUsuario(usuario)
       .subscribe(datos=>{
        // this.usuarios=datos;
-        this.router.navigate(["listadousuarios"]);
+        this.router.navigate(["listado_usuario"]);
       })
     }
 

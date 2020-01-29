@@ -13,15 +13,17 @@ export class AgregarUsuarioComponent implements OnInit {
   constructor(private router:Router, private http:ServicioUsuariosService) { 
   this.usuario;
   }
+
   ngOnInit() {
+    return this.agregarUsuario();
   }
-  Guardar(){
-   
-    this.http.createUsuario(this.usuario)
-    .subscribe(datos=>{
-      this.router.navigate(["listadousuario"]);
-    })
+
+  agregarUsuario()
+  {
+    this.http.createUsuario(this.usuario).subscribe(usuario=>{this.usuario=usuario});
   }
+
+
 
  //Para volver a la pagina principal 
   //this.router.navigateByUrl('/');

@@ -1,7 +1,13 @@
-<p>modificar works!</p>
+<p>Modificación de usuarios</p>
 <form action="">
-    <input type="text" id="nombre" name="nombre" [(ngModel)]="persona.nombre">
-      {{persona.id}}
-      {{persona.nombre}}
-<button (click)="Actualizar(persona)">Modificar</button>
+  <label for="Nombre" class="mr-sm-2">Nombre</label>
+    <input type="text" id="nombre" name="nombre" [(ngModel)]="usuario.nombre">
+      {{usuario.nombre}}
+      <label for="Apellidos" class="mr-sm-2">Apellidos</label>
+      <input type="text" id="apellidos" name="apellidos" [(ngModel)]="usuario.apellidos">
+      {{usuario.apellidos}}
+      <label for="Telefono" class="mr-sm-2">Telefono</label>
+      <input type="text" id="telefono" name="telefono" [(ngModel)]="usuario.telefono">
+      {{usuario.telefono}}
+<button (click)="Actualizar(usuario)">Modificar</button>
 </form>

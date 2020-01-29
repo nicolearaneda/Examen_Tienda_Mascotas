@@ -1,1 +1,22 @@
-<p>historicoventas-listado works!</p>
+<p>Histórico de ventas</p>  
+<table>
+        <tr>
+            <th>ID Venta</th>
+            <th>Fecha venta</th>
+            <th>Hora venta</th>
+            <th>ID usuario</th>
+            <th>ID mascota</th>
+            <th>Precio</th>
+        </tr>
+        <tr *ngFor="let venta of ventas">
+            <td>{{venta.id_v}}</td>
+            <td>{{venta.fecha}}</td>
+            <td>{{venta.hora}}</td>
+            <td>{{venta.id_u}}</td>
+            <td>{{venta.id_m}}</td>
+            <td>{{venta.precio}}</td>
+        </tr>
+    </table>
+
+    <!--  <td><button (click)="Editar(venta)">modificar</button></td>
+            <td><button (click)="Eliminar(venta)">eliminar</button></td>-->

@@ -14,13 +14,19 @@ export class HistoricoventasListadoComponent implements OnInit {
   constructor(private http:ServiciohistoricoventasService,private router:Router) { }
 
   ngOnInit() {
+    return this.verListadoVentas();
+  }  
+
+  verListadoVentas()
+  {
     this.http.getVentas()
-    .subscribe(datos=>{this.ventas=datos;
-    })
+    .subscribe(ventass=>{this.ventas=ventass}); //acá mostrará todo el array de JSON
   }
-Editar(ventas:Historicoventas):void{
-  localStorage.setItem("id",ventas.id_v.toString());
-  this.router.navigate(["modificarmascota"]);
+
+
+/*Editar(venta:Historicoventas):void{
+  localStorage.setItem("id_v",venta.id_v.toString());
+  this.router.navigate(["modificar_venta"]);
 }
 Eliminar(venta:Historicoventas)
 {
@@ -28,6 +34,7 @@ Eliminar(venta:Historicoventas)
   .subscribe(datos=>{
    this.ventas=this.ventas.filter(p=>p!=venta);
     alert("eliminado");
-    this.router.navigate(["listadoventas"]);
+    this.router.navigate(["listado_ventas"]);
     })
+}*/
 }

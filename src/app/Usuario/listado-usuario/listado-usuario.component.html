@@ -1,4 +1,4 @@
-<p>listado works!</p>
+<p>Listado de usuarios</p>
     <table>
         <tr>
             <th>ID Usuario</th>
@@ -6,7 +6,7 @@
             <th>Apellidos</th>
             <th>Telefono</th>
             <th>Username</th>
-            <th>Password</th>
+           <!-- <th>Password</th> -->
             <th>Modificar</th>
             <th>Eliminar</th>
         </tr>
@@ -16,8 +16,9 @@
             <td>{{usuario.apellidos}}</td>
             <td>{{usuario.telefono}}</td>
             <td>{{usuario.username}}</td>
-            <td>{{usuario.password}}</td>
-            <td><button (click)="Editar(usuario)">modificar</button></td>
-            <td><button (click)="Eliminar(usuario)">eliminar</button></td>
+           <!-- <td>{{usuario.password}}</td>-->
+            <td><button (click)="Editar(usuario)">Modificar</button></td>
+            <td><button (click)="Eliminar(usuario)">Eliminar</button></td>
         </tr>
     </table>
+    <router-outlet></router-outlet>

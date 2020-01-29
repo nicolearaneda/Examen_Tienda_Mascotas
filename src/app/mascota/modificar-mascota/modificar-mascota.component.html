@@ -1,7 +1,18 @@
 <p>modificar works!</p>
 <form action="">
-    <input type="text" id="nombre" name="nombre" [(ngModel)]="persona.nombre">
-      {{persona.id}}
-      {{persona.nombre}}
-<button (click)="Actualizar(persona)">Modificar</button>
+<!--    <input type="text" id="nombre" name="nombre" [(ngModel)]="mascota.nombre">
+      {{mascota.id_m}}-->
+      <label for="Nombre" class="mr-sm-2">Nombre</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Nombre" [(ngModel)]="mascota.nombre">
+      {{mascota.nombre}}
+      <label for="Tipo" class="mr-sm-2">Tipo</label>
+      <input type="text" id="tipo" name="tipo" placeholder="Tipo" [(ngModel)]="mascota.tipo">
+      {{mascota.tipo}}
+      <label for="Precio" class="mr-sm-2">Precio</label>
+      <input type="text" id="precio" name="precio" placeholder="Precio" [(ngModel)]="mascota.precio">
+      {{mascota.precio}}
+<button (click)="Actualizar(mascota)">Modificar</button>
 </form>
+<router-outlet></router-outlet> 
+
+

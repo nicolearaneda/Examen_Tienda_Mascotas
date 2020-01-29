@@ -1,6 +1,6 @@
 export interface Usuario 
 {
-    id_u:number;
+    id_u?:number;
     nombre:String;
     apellidos:String;
     telefono:number;

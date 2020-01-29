@@ -15,12 +15,13 @@ export class AgregarMascotaComponent implements OnInit {
   }
   
   ngOnInit() {
+    return this.agregarMascota();
   }
 
-  Guardar(){
-    this.http.createMascota(this.mascota)
-    .subscribe(datos=>{
-      this.router.navigate(["listadomascota"]);
-    })
+  agregarMascota()
+  {
+    this.http.createMascota(this.mascota).subscribe(mascotita=>{this.mascota=mascotita});
+  }
 
 }
+

@@ -11,9 +11,7 @@ export class ServicioUsuariosService {
   constructor(private http:HttpClient) 
   { 
     this.path_usuario='http://localhost:8080/usuarios'
-
   }
-
 
   getUsuarios()
   {

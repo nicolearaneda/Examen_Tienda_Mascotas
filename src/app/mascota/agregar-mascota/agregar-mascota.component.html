@@ -1,17 +1,40 @@
 <p>agregar works!</p>
-<form (submit)="Guardar()" #formularioAlta="ngForm">
-    <input type="text" id="nombre" name="nombre" autocomplete="off" [(ngModel)]="persona.nombre" #nombre="ngModel" required PrimeraMayuscula nombreUnico [ngModelOptions]="{updateOn:'blur'}">
+<form (submit)="agregarMascota()" #formularioAlta="ngForm">
+  <label for="Nombre" class="mr-sm-2">Nombre</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Nombre" autocomplete="off" [(ngModel)]="mascota.nombre"
+     #nombre="ngModel" required [ngModelOptions]="{updateOn:'blur'}">
     <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
       <div *ngIf="nombre.errors.required">
         el nombre es obligatorio
       </div>
-      <div *ngIf="nombre.errors.PrimeraMayuscula">
+    </div>
+
+    <label for="Tipo" class="mr-sm-2">Tipo</label>
+    <input type="text" id="tipo" name="tipo" placeholder="Tipo" autocomplete="off" [(ngModel)]="mascota.tipo"
+     #tipo="ngModel" required [ngModelOptions]="{updateOn:'blur'}">
+    <div *ngIf="tipo.invalid && (tipo.dirty || tipo.touched)">
+      <div *ngIf="tipo.errors.required">
+        el tipo es obligatorio
+      </div>
+    </div>
+
+
+    <label for="Precio" class="mr-sm-2">Precio</label>
+    <input type="text" id="precio" name="precio" placeholder="Precio" autocomplete="off" [(ngModel)]="mascota.precio"
+     #precio="ngModel" required [ngModelOptions]="{updateOn:'blur'}">
+    <div *ngIf="precio.invalid && (precio.dirty || precio.touched)">
+      <div *ngIf="precio.errors.required">
+        el precio es obligatorio
+      </div>
+    </div>
+
+    <button type="submit" [disabled] = "!formularioAlta.form.valid">Guardar</button>
+</form>
+
+
+<!--  <div *ngIf="nombre.errors.PrimeraMayuscula">
         {{nombre.errors.PrimeraMayuscula.message}}
       </div>
     <div *ngIf="nombre.errors.nombreUnico">
       ya existe
-    </div>
-    </div>
-    <input type="text">
-    <button type="submit" [disabled] = "!formularioAlta.form.valid">Guardar</button>
-</form>
+    </div>-->

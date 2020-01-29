@@ -7,14 +7,14 @@ import { EliminarUsuarioComponent } from './Usuario/eliminar-usuario/eliminar-us
 import { ModificarMascotaComponent } from './mascota/modificar-mascota/modificar-mascota.component';
 import { AgregarMascotaComponent } from './mascota/agregar-mascota/agregar-mascota.component';
 import { ListadoMascotaComponent } from './mascota/listado-mascota/listado-mascota.component';
-
+import { HistoricoventasListadoComponent } from './historicoventas/historicoventas-listado/historicoventas-listado.component';
 
 const routes: Routes = [
   {path: 'listado_usuario',
   component: ListadoUsuarioComponent
   },
   {
-    path: 'alta_usuario',
+    path: 'agregar_usuario',
     component: AgregarUsuarioComponent
   },
   {
@@ -30,13 +30,17 @@ const routes: Routes = [
     component: ModificarMascotaComponent 
   },
   {
-    path: 'alta_mascota',
+    path: 'agregar_mascota',
     component: AgregarMascotaComponent
   },
   {
     path:'listado_mascota',
     component: ListadoMascotaComponent
   },
+  {
+    path:'historicoventas_listado',
+    component: HistoricoventasListadoComponent
+  }
   
 ];
 

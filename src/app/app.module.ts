@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -12,7 +11,8 @@ import { ModificarUsuarioComponent } from './Usuario/modificar-usuario/modificar
 import { AgregarUsuarioComponent } from './Usuario/agregar-usuario/agregar-usuario.component';
 import { EliminarUsuarioComponent } from './Usuario/eliminar-usuario/eliminar-usuario.component';
 import { ListadoUsuarioComponent } from './Usuario/listado-usuario/listado-usuario.component';
-import { ValidaContraDirective } from './Validador/valida-contra.directive';
+import { ValidaUsernameDirective } from './Validador/valida-username.directive';
+import { HistoricoventasListadoComponent } from './historicoventas/historicoventas-listado/historicoventas-listado.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { ValidaContraDirective } from './Validador/valida-contra.directive';
     AgregarUsuarioComponent,
     EliminarUsuarioComponent,
     ListadoUsuarioComponent,
-    ValidaContraDirective
+    HistoricoventasListadoComponent,
+    ValidaUsernameDirective
   ],
   imports: [
     BrowserModule,

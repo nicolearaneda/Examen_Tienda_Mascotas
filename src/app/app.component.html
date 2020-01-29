@@ -1,3 +1,73 @@
-<button (click)="listado()">Listado Completo</button>
+<!--<button (click)="listado()">Listado Completo</button>
 <button (click)="alta()">Nuevo</button>
-<router-outlet></router-outlet>
+<button (click)="modificar()">Modificar</button>
+-->
+
+<div class="jumbotron text-center">
+    <h1>Tienda de Mascotas Kero-Chan</h1>
+    </div>
+    
+    <div class="container p-3 my-3 bg-dark text-white">
+      <h5>
+        Agregue una mascota.
+      </h5>
+      <div class="btn-group-vertical">
+        <button class="btn btn-danger mr-3" (click)="alta_mascotas()"> Alta Mascota </button>
+      </div>
+      </div>
+      <br>
+
+    <div class="container p-3 my-3 bg-secondary text-white">
+    <h5>
+      Modifique las mascotas.
+    </h5>
+    <div class="btn-group-vertical">
+    <button class=" btn btn-info" (click)="modificar_mascotas()"> Modificar mascota </button>
+    </div>
+    </div>
+    
+    <br>
+    
+    <div class="container p-3 my-3 bg-dark text-white">
+      <h5>
+        Explore el listado de mascotas.
+      </h5>
+      <div class="btn-group-vertical">
+      <button class="btn btn-danger mr-3" (click)="listado_mascotas()"> Listado mascotas</button>
+      </div>
+      </div>
+      
+      <br>    
+    <!-- --------------------------------------------------------------------- -->
+      <div class="container p-3 my-3 bg-secondary text-dark">
+        <h5>
+          Agregue un usuario.
+        </h5>
+        <div class="btn-group-vertical">
+          <button class="btn btn-info mr-3" (click)="alta_usuarios()"> Agregar usuario </button>
+        </div>
+        </div>
+
+        <br>    
+    
+        <div class="container p-3 my-3 bg-secondary text-dark">
+          <h5>
+            Modifique un usuario.
+          </h5>
+          <div class="btn-group-vertical">
+            <button class="btn btn-info mr-3" (click)="modificar_usuarios()"> Modificar usuario </button>
+          </div>
+          </div>
+          <a routerLink="/modificar_usuarios()">Ir a modificar usuarios</a>
+
+          <br>    
+    
+          <div class="container p-3 my-3 bg-secondary text-dark">
+            <h5>
+              Listado de usuarios.
+            </h5>
+            <div class="btn-group-vertical">
+              <button class="btn btn-info mr-3" (click)="listado_usuarios()"> Listado Usuarios </button>
+            </div>
+            </div>    
+            <router-outlet></router-outlet> 

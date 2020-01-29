@@ -16,12 +16,14 @@ export class ListadoMascotaComponent implements OnInit {
 
   ngOnInit() {
     this.http.getMascotas()
-    .subscribe(datos=>{this.mascotas=datos;
+    .subscribe(datos=>{
+      console.log(datos[0].nombre);
+      this.mascotas=datos;
     })
   }
 Editar(mascota:Mascota):void{
   localStorage.setItem("id_m",mascota.id_m.toString());
-  this.router.navigate(["modificarmascota"]);
+  this.router.navigate(["modificar_mascota"]);
 }
 Eliminar(mascota:Mascota)
 {
@@ -29,6 +31,7 @@ Eliminar(mascota:Mascota)
   .subscribe(datos=>{
    this.mascotas=this.mascotas.filter(p=>p!=mascota);
     alert("eliminado");
-    this.router.navigate(["listadomascota"]);
+    this.router.navigate(["listado_mascota"]);
     })
+}
 }

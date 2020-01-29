@@ -12,20 +12,23 @@ export class ModificarMascotaComponent implements OnInit {
   mascota:Mascota;
   constructor(private router:Router, private http:ServicioMascotasService) { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
     this.Editar();
   }
-  Editar(){
-  let id=localStorage.getItem("id");
-  this.http.getMascotaUnica(+id)
+
+  Editar()
+  {
+  let id_m=localStorage.getItem("id_m");
+  this.http.getMascotaUnica(+id_m)
   .subscribe(datos=>{this.mascota=datos;})
   }
   Actualizar(mascota:Mascota)
   {
     this.http.updateMascota(mascota)
     .subscribe(datos=>{
-     // this.persona=datos;
-      this.router.navigate(["listadomascotas"]);
+      this.mascota=datos;
+      this.router.navigate(["listado_mascotas"]);
     })
   }
 
