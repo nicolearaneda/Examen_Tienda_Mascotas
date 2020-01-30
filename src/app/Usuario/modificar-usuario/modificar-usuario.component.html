@@ -1,13 +1,17 @@
-<p>Modificación de usuarios</p>
-<form action="">
-  <label for="Nombre" class="mr-sm-2">Nombre</label>
-    <input type="text" id="nombre" name="nombre" [(ngModel)]="usuario.nombre">
-      {{usuario.nombre}}
+<div class="container">
+<div class="column mr-sm-2">
+
+<form>
+      <label for="Nombre" class="mr-sm-2">Nombre</label>
+      <input type="text" id="nombre" name="nombre" [(ngModel)]= "usuario.nombre">
+
       <label for="Apellidos" class="mr-sm-2">Apellidos</label>
-      <input type="text" id="apellidos" name="apellidos" [(ngModel)]="usuario.apellidos">
-      {{usuario.apellidos}}
+      <input type="text" id="apellidos" name="apellidos" [(ngModel)]= "usuario.apellidos">
+
       <label for="Telefono" class="mr-sm-2">Telefono</label>
-      <input type="text" id="telefono" name="telefono" [(ngModel)]="usuario.telefono">
-      {{usuario.telefono}}
-<button (click)="Actualizar(usuario)">Modificar</button>
+      <input type="text" id="telefono" name="telefono" [(ngModel)]= "usuario.telefono">
+
+      <button class="btn btn-success" (click)="Actualizar(usuario)">Modificar</button>
 </form>
+</div>
+</div>

@@ -9,13 +9,13 @@ import { ServicioMascotasService } from 'src/app/Servicios/servicio-mascotas.ser
   styleUrls: ['./agregar-mascota.component.css']
 })
 export class AgregarMascotaComponent implements OnInit {
-  mascota:Mascota;
-  constructor(private router:Router, private http:ServicioMascotasService) { 
-  this.mascota=null;
-  }
+  mascota:Mascota={id_m:0,nombre:'',tipo:'',precio:0, vendido:'no'};
   
-  ngOnInit() {
-    return this.agregarMascota();
+  constructor(private router:Router, private http:ServicioMascotasService) {  } 
+  
+  ngOnInit() 
+  {
+    this.mascota;
   }
 
   agregarMascota()
@@ -23,10 +23,8 @@ export class AgregarMascotaComponent implements OnInit {
     //this.http.createMascota(this.mascota).subscribe(mascotita=>{this.mascota=mascotita});
     this.http.createMascota(this.mascota)
     .subscribe(datos=>{
-      this.router.navigate(["listado_mascotas"]);
+      this.router.navigate(["listado_mascota"]);
     })
   }
-  
-
 }
 

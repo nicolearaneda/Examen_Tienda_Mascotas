@@ -1,6 +1,13 @@
-<p>Listado de usuarios</p>
-    <table>
-        <tr>
+<br>
+<br>
+
+<div class="container">
+    <div class="row">
+        <h3 class="text-center">Listado de usuarios</h3>
+    <table class="table table-sm">
+        <caption>Lista de usuarios</caption>
+        <thead class="table-primary">
+        <tr class="text-center">
             <th>ID Usuario</th>
             <th>Nombre</th>
             <th>Apellidos</th>
@@ -11,16 +18,19 @@
             <th>Modificar</th>
             <th>Eliminar</th>
         </tr>
-        <tr *ngFor="let usuario of usuarios">
-            <td>{{usuario.id_u}}</td>
+        </thead>
+        <tbody>
+        <tr class="text-center" *ngFor="let usuario of usuarios">
+            <td class="bg-light">{{usuario.id_u}}</td>
             <td>{{usuario.nombre}}</td>
-            <td>{{usuario.apellidos}}</td>
+            <td class="bg-light">{{usuario.apellidos}}</td>
             <td>{{usuario.telefono}}</td>
-            <td>{{usuario.username}}</td>
+            <td class="bg-light">{{usuario.username}}</td>
             <td>{{usuario.rol}}</td>
            <!-- <td>{{usuario.password}}</td>-->
-            <td><button (click)="Editar(usuario)">Modificar</button></td>
-            <td><button (click)="Eliminar(usuario)">Eliminar</button></td>
+            <td><button class="btn btn-success" (click)="Editar(usuario)">Modificar</button></td>
+            <td><button class="btn btn-success" (click)="Eliminar(usuario)">Eliminar</button></td>
         </tr>
+    </tbody>
     </table>
     <router-outlet></router-outlet>

@@ -15,8 +15,7 @@ export class ServicioMascotasService {
   }
 
   getMascotas()
-  {
-    
+  { 
     return this.http.get<Mascota[]>(this.path_mascota);
   }
   
@@ -35,7 +34,7 @@ export class ServicioMascotasService {
   return this.http.delete<Mascota>(this.path_mascota+"/"+mascota.id_m);
   }
 
-  getMascotaUnica(id_m:number)
+  getMascotaUnica(id_m:Number)
   {
     return this.http.get<Mascota>(this.path_mascota+"/"+id_m);
   }

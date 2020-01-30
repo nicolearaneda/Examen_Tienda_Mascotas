@@ -1,17 +1,30 @@
-<p>Listado de mascotas</p>
-    <table>
-        <tr>
+<br>
+<br>
+
+<div class="container">
+    <div class="row">
+        <h3 class="text-center">Listado de mascotas</h3>
+    <table class="table table-sm">
+        <caption>Lista de mascotas</caption>
+      <thead class="table-primary">
+        <tr class="text-center">
             <th>ID Mascota</th>
             <th>Nombre</th>
             <th>Tipo</th>
             <th>Precio</th>
             <th>Modificar</th>
         </tr>
-        <tr *ngFor="let mascota of mascotas">
-            <td>{{mascota.id_m}}</td>
+    </thead>
+    <tbody>
+        <tr class="text-center" *ngFor="let mascota of mascotas">
+            <td class="bg-light">{{mascota.id_m}}</td>
             <td>{{mascota.nombre}}</td>
-            <td>{{mascota.tipo}}</td>
+            <td class="bg-light">{{mascota.tipo}}</td>
             <td>{{mascota.precio}}</td>
-            <td><button (click)="Editar(mascota)">modificar</button></td>
+            <td><button class="btn btn-success" (click)="Editar(mascota)">modificar</button></td>
         </tr>
+    </tbody>
     </table>
+    </div>
+</div>
+

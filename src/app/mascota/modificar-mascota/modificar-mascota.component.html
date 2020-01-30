@@ -1,18 +1,25 @@
-<p>modificar works!</p>
-<form action="">
-<!--    <input type="text" id="nombre" name="nombre" [(ngModel)]="mascota.nombre">
-      {{mascota.id_m}}-->
+<div class="container">
+      <div class="row">
+<form>
       <label for="Nombre" class="mr-sm-2">Nombre</label>
-      <input type="text" id="nombre" name="nombre" placeholder="Nombre" [(ngModel)]="mascota.nombre">
-      {{mascota.nombre}}
-      <label for="Tipo" class="mr-sm-2">Tipo</label>
-      <input type="text" id="tipo" name="tipo" placeholder="Tipo" [(ngModel)]="mascota.tipo">
-      {{mascota.tipo}}
+      <input class="form-control" type="text" id="nombre" name="nombre" [(ngModel)]= "mascota.nombre">
+
+     
+      <div class="form-group">
+      <select class="form-control" type="text" id="tipo" name="tipo" autocomplete="off" [(ngModel)]= "mascota.tipo">
+      <option>Seleccione una opción</option>      
+      <option>Perro</option>
+      <option>Gato</option>
+      <option>Conejo</option>
+      <option>Hamster</option>
+      <option>Pollito</option>
+      </select>
+      </div>
+
       <label for="Precio" class="mr-sm-2">Precio</label>
-      <input type="text" id="precio" name="precio" placeholder="Precio" [(ngModel)]="mascota.precio">
-      {{mascota.precio}}
-<button (click)="Actualizar(mascota)">Modificar</button>
+      <input class="form-control" type="text" id="precio" name="precio" [(ngModel)]= "mascota.precio">
+
+      <button class="btn btn-success" (click)="Actualizar(mascota)">Modificar</button>
 </form>
-<router-outlet></router-outlet> 
-
-
+      </div>
+</div>

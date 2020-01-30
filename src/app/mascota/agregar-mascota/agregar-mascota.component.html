@@ -1,46 +1,60 @@
-<p>agregar works!</p>
-<form (submit)="agregarMascota()" #formularioAlta="ngForm">
-  <label for="Nombre" class="mr-sm-2">Nombre</label>
-    <input type="text" id="nombre" name="nombre" placeholder="Nombre" autocomplete="off" [(ngModel)]="mascota.nombre"
-     #nombre="ngModel" required [ngModelOptions]="{updateOn:'blur'}">
-    <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
-      <div *ngIf="nombre.errors.required">
-        el nombre es obligatorio
-      </div>
-    </div>
+<div class="container">
+<div class="column mr-sm-2">
+  <h3>Formulario para dar de alta a una mascota</h3>
+</div>
+<br>
 
-    <label for="Tipo" class="mr-sm-2">Tipo</label>
-    <input type="text" id="tipo" name="tipo" placeholder="Tipo"
-     autocomplete="off" [(ngModel)]="mascota.tipo"
-     #tipo="ngModel" required [ngModelOptions]="{updateOn:'blur'}">
-    <div *ngIf="tipo.invalid && (tipo.dirty || tipo.touched)">
-      <div *ngIf="tipo.errors.required">
-        el tipo es obligatorio
-      </div>
-    </div>
+  <br>
 
+  <form (submit)="agregarMascota()" #formularioAlta="ngForm">
+    <br>
+<h4>Para dar de alta a una mascota, rellene el formulario con los datos que se le indican.</h4>
+<br>
+<label for="nombre" class="mr-sm-2">Nombre</label>
+<br>
+<input class="form-control" type="text" id="nombre" name="nombre" placeholder="Nombre" autocomplete="off" 
+[(ngModel)]= "mascota.nombre" #nombre="ngModel" required [ngModelOptions]="{updateOn:'blur'}">
+<div class= "alert alert-danger" *ngIf= "nombre.invalid && (nombre.dirty || nombre.touched)"> 
+<div *ngIf= "nombre.errors.required">
+El nombre es obligatorio
+</div>
+</div>
+<br>
 
-    <label for="Precio" class="mr-sm-2">Precio</label>
-    <input type="text" id="precio" name="precio" 
-    placeholder="Precio" autocomplete="off" 
-    [(ngModel)]="mascota.precio"
-     #precio="ngModel" required 
-     [ngModelOptions]="{updateOn:'blur'}">
-    <div *ngIf="precio.invalid &&
-     (precio.dirty || precio.touched)">
-      <div *ngIf="precio.errors.required">
-        el precio es obligatorio
-      </div>
-    </div>
+<label for="Tipo" class="mr-sm-2">Tipo</label>
+<br>
+<div class="form-group">
+    <select class="form-control" type="text" id="tipo" name="tipo" autocomplete="off" [(ngModel)]= "mascota.tipo" 
+  #tipo="ngModel" required [ngModelOptions]="{updateOn:'blur'}">
+    <option>Seleccione una opción</option>
+    <option>Perro</option>
+    <option>Gato</option>
+    <option>Conejo</option>
+    <option>Hamster</option>
+    <option>Pollito</option>
+  </select>
+</div>
+<div class= "alert alert-primary" *ngIf= "tipo.invalid && (tipo.dirty || tipo.touched)">
+<div *ngIf= "tipo.errors.required">
+El tipo es obligatorio
+</div>
+</div>
 
-    <button type="submit" [disabled] 
-    = "!formularioAlta.form.valid">Guardar</button>
+<br>
+
+<label for="Precio" class="mr-sm-2">Precio</label>
+<br>
+<input class="form-control" type="text" id="precio" name="precio" placeholder="Precio" autocomplete="off" 
+[(ngModel)]= "mascota.precio" #precio="ngModel" required [ngModelOptions]="{updateOn:'blur'}">
+<div class= "alert alert-success" *ngIf= "precio.invalid && (precio.dirty || precio.touched)">
+<div *ngIf= "precio.errors.required">
+El precio es obligatorio
+</div>
+</div>
+<br>
+<button class="btn btn-success" type="submit" [disabled]  = "!formularioAlta.form.valid">Guardar</button>
+<br>
+<br>
+<br>
 </form>
-
-
-<!--  <div *ngIf="nombre.errors.PrimeraMayuscula">
-        {{nombre.errors.PrimeraMayuscula.message}}
-      </div>
-    <div *ngIf="nombre.errors.nombreUnico">
-      ya existe
-    </div>-->
+</div>

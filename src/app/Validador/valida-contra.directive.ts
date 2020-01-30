@@ -11,7 +11,7 @@ export class ValidacontraDirective implements Validator{
   validate(control: AbstractControl): import("@angular/forms").ValidationErrors {
     
   const dato = <string>control.value; //control: es como se llame el input
-  const datoNoAdmitido = ['123456','admin','user','qwerty','1234']; 
+  const datoNoAdmitido = ['123456789012','administrador','username','111111111111','000000']; 
 
    if(!dato)
    {

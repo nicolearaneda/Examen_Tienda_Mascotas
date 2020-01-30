@@ -2,55 +2,74 @@
 <button (click)="alta()">Nuevo</button>
 <button (click)="modificar()">Modificar</button>
 -->
-
-<div class="jumbotron text-center">
+<div class="container-fluid center">
+<div class="row">
+<div class="jumbotron text-center p-3 my-3 bg-light">
     <h1>Tienda de Mascotas Kero-Chan</h1>
-    </div>
+    <h2>Bienvenido/a al gestor de venta de Mascotas</h2>
     
-    <div class="container p-3 my-3 bg-dark text-white">
-      <h5>
-        Agregue una mascota.
-      </h5>
-      <div class="btn-group-vertical">
-        <button class="btn btn-danger mr-3" (click)="alta_mascotas()"> Alta Mascota </button>
-      </div>
-      </div>
-      <br>
+    <img class="mx-auto d-block" src="../assets/img/panoramica.jpg" alt="img1" width="1300" height="200">
 
-    <div class="container p-3 my-3 bg-secondary text-white">
+  </div>
+    
+      <div class="card" style="width: 18rem;">
+        <img src="../assets/img/alta.jpg" class="card-img-top" alt="alta" height="280">
+        <div class="card-body">
+          <h5 class="card-title">Alta de mascotas</h5>
+          <p class="card-text">Para dar de alta a una mascota, haz click a continuación.</p>
+<!--          <a href="#" class="btn btn-primary"></a>-->
+<button class="btn btn-danger mr-3" (click)="alta_mascotas()"> Alta Mascota </button>
+        </div>
+      </div>
+    
+      
+
+  <!--  <div class="container p-3 my-3 bg-secondary text-white">
     <h5>
       Modifique las mascotas.
     </h5>
     <div class="btn-group-vertical">
     <button class=" btn btn-info" (click)="modificar_mascotas()"> Modificar mascota </button>
     </div>
-    </div>
+    </div>-->
     
     <br>
     
-    <div class="container p-3 my-3 bg-dark text-white">
+<!--    <div class="container p-3 my-3 bg-dark text-white">
       <h5>
         Explore el listado de mascotas.
       </h5>
       <div class="btn-group-vertical">
       <button class="btn btn-danger mr-3" (click)="listado_mascotas()"> Listado mascotas</button>
       </div>
+      </div>-->
+
+      <div class="card" style="width: 18rem;">
+        <img src="../assets/img/mosaico.jpg" class="card-img-top" alt="mosaico">
+        <div class="card-body">
+          <h5 class="card-title">Listado de mascotas</h5>
+          <p class="card-text">Para visualizar el listado de mascotas, haz click a continuación.</p>
+<!--          <a href="#" class="btn btn-primary"></a>-->
+<button class="btn btn-danger mr-3" (click)="listado_mascotas()"> Listado Mascotas </button>
+        </div>
       </div>
+
       
       <br>    
     <!-- --------------------------------------------------------------------- -->
-      <div class="container p-3 my-3 bg-secondary text-dark">
-        <h5>
-          Agregue un usuario.
-        </h5>
-        <div class="btn-group-vertical">
-          <button class="btn btn-info mr-3" (click)="alta_usuarios()"> Agregar usuario </button>
-        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="../assets/img/usuario.jpg" class="card-img-top" alt="usuario">
+          <div class="card-body">
+            <h5 class="card-title">Alta de usuarios</h5>
+            <p class="card-text">Para dar de alta un usuario, haz click a continuación.</p>
+  <!--          <a href="#" class="btn btn-primary"></a>-->
+  <button class="btn btn-danger mr-3" (click)="alta_usuarios()"> Agregar usuario </button>
+          </div>
         </div>
 
         <br>    
     
-        <div class="container p-3 my-3 bg-secondary text-dark">
+       <!-- <div class="container p-3 my-3 bg-secondary text-dark">
           <h5>
             Modifique un usuario.
           </h5>
@@ -59,15 +78,22 @@
           </div>
           </div>
           <a routerLink="/modificar_usuarios()">Ir a modificar usuarios</a>
-
+-->
           <br>    
-    
-          <div class="container p-3 my-3 bg-secondary text-dark">
-            <h5>
-              Listado de usuarios.
-            </h5>
-            <div class="btn-group-vertical">
-              <button class="btn btn-info mr-3" (click)="listado_usuarios()"> Listado Usuarios </button>
-            </div>
-            </div>    
+     
+            
+            <div class="card" style="width: 18rem;">
+              <img src="../assets/img/lusuarios.jpg" class="card-img-top" alt="lusuarios">
+              <div class="card-body">
+                <h5 class="card-title">Listado de usuarios</h5>
+                <p class="card-text">Para visualizar el listado de usuarios, haz click a continuación.</p>
+      <!--          <a href="#" class="btn btn-primary"></a>-->
+      <button class="btn btn-danger mr-3" (click)="listado_usuarios()"> Listado Usuarios </button>
+              </div>
+            </div> 
+
+
+          </div>
+
+          </div>
             <router-outlet></router-outlet> 
